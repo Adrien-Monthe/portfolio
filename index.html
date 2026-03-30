@@ -535,6 +535,94 @@
     .reveal.visible { opacity: 1; transform: translateY(0); }
     .t-item { opacity: 0; transform: translateX(-18px); transition: opacity 0.5s ease, transform 0.5s ease; }
     .t-item.visible { opacity: 1; transform: translateX(0); }
+
+    /* ── ARTICLES ── */
+    #articles { padding: 6rem 0; }
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem; margin-top: 3rem;
+    }
+    .art-card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 16px; padding: 1.75rem;
+      display: flex; flex-direction: column; gap: 1rem;
+      transition: border-color 0.2s, background 0.2s, transform 0.2s;
+      cursor: none;
+    }
+    .art-card:hover { border-color: var(--border-accent); background: var(--bg-card-hover); transform: translateY(-4px); }
+    .art-meta { display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; }
+    .art-tag {
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--accent); background: rgba(220,38,38,0.1); border: 1px solid rgba(220,38,38,0.2);
+      padding: 0.2rem 0.6rem; border-radius: 6px;
+    }
+    .art-date { font-size: 0.78rem; color: var(--text-3); font-family: var(--mono); margin-left: auto; }
+    .art-title {
+      font-size: 1.1rem; font-weight: 700; color: var(--text); line-height: 1.4;
+    }
+    .art-excerpt { font-size: 0.88rem; color: var(--text-2); line-height: 1.7; flex: 1; }
+    .art-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 0.25rem; }
+    .art-read-time { font-size: 0.75rem; color: var(--text-3); font-family: var(--mono); }
+    .art-btn {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-size: 0.82rem; font-weight: 600; color: var(--accent);
+      background: none; border: 1px solid var(--border-accent);
+      padding: 0.4rem 0.9rem; border-radius: 8px;
+      cursor: none; transition: background 0.2s, color 0.2s;
+    }
+    .art-btn:hover { background: var(--accent); color: #fff; }
+    .art-btn svg { width: 13px; height: 13px; }
+
+    /* ── ARTICLE READER MODAL ── */
+    .reader-overlay {
+      position: fixed; inset: 0; z-index: 200;
+      background: rgba(0,0,0,0.75); backdrop-filter: blur(6px);
+      display: flex; align-items: flex-start; justify-content: center;
+      padding: 2rem 1rem; overflow-y: auto;
+      opacity: 0; pointer-events: none; transition: opacity 0.3s;
+    }
+    .reader-overlay.open { opacity: 1; pointer-events: all; }
+    .reader-modal {
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: 20px; width: 100%; max-width: 760px;
+      padding: 3rem 3.5rem; position: relative;
+      transform: translateY(24px); transition: transform 0.3s;
+    }
+    .reader-overlay.open .reader-modal { transform: translateY(0); }
+    .reader-close {
+      position: absolute; top: 1.25rem; right: 1.25rem;
+      width: 36px; height: 36px; border-radius: 9px;
+      border: 1px solid var(--border); background: var(--bg-card);
+      color: var(--text-2); display: flex; align-items: center; justify-content: center;
+      cursor: none; transition: all 0.2s; font-size: 1.1rem; line-height: 1;
+    }
+    .reader-close:hover { border-color: var(--border-accent); color: var(--accent); }
+    .reader-tag { display: inline-block; margin-bottom: 1rem; }
+    .reader-title { font-size: clamp(1.5rem, 3vw, 2.1rem); font-weight: 800; line-height: 1.3; margin-bottom: 0.75rem; }
+    .reader-byline { font-size: 0.82rem; color: var(--text-3); font-family: var(--mono); margin-bottom: 2rem; }
+    .reader-divider { border: none; border-top: 1px solid var(--border); margin-bottom: 2rem; }
+    .reader-body { font-size: 0.97rem; color: var(--text-2); line-height: 1.85; }
+    .reader-body h2 { font-size: 1.25rem; font-weight: 700; color: var(--text); margin: 2rem 0 0.75rem; }
+    .reader-body h3 { font-size: 1.05rem; font-weight: 600; color: var(--text); margin: 1.5rem 0 0.5rem; }
+    .reader-body p { margin-bottom: 1.2rem; }
+    .reader-body ul, .reader-body ol { padding-left: 1.4rem; margin-bottom: 1.2rem; }
+    .reader-body li { margin-bottom: 0.4rem; }
+    .reader-body code {
+      font-family: var(--mono); font-size: 0.88em;
+      background: var(--bg-card); border: 1px solid var(--border);
+      padding: 0.1em 0.45em; border-radius: 5px; color: var(--accent-2);
+    }
+    .reader-body pre {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 10px; padding: 1.25rem; overflow-x: auto; margin-bottom: 1.2rem;
+    }
+    .reader-body pre code { background: none; border: none; padding: 0; color: var(--text); }
+    .reader-body strong { color: var(--text); }
+    @media (max-width: 600px) {
+      .reader-modal { padding: 2rem 1.5rem; }
+      .articles-grid { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
@@ -551,6 +639,7 @@
     <li><a href="#skills">Skills</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#projects">Projects</a></li>
+    <li><a href="#articles">Articles</a></li>
     <li><a href="#education">Education</a></li>
     <li><a href="#contact" class="nav-cta">Contact</a></li>
   </ul>
@@ -567,6 +656,7 @@
   <a href="#skills" onclick="closeMobile()">Skills</a>
   <a href="#experience" onclick="closeMobile()">Experience</a>
   <a href="#projects" onclick="closeMobile()">Projects</a>
+  <a href="#articles" onclick="closeMobile()">Articles</a>
   <a href="#education" onclick="closeMobile()">Education</a>
   <a href="#contact" onclick="closeMobile()">Contact</a>
 </div>
@@ -949,6 +1039,32 @@
   </div>
 </section>
 
+<!-- ARTICLES -->
+<section id="articles">
+  <div class="container">
+    <div class="reveal">
+      <div class="label">// thoughts &amp; writings</div>
+      <h2 class="section-title">Articles</h2>
+      <p class="section-desc">Perspectives on software engineering, architecture, and the craft of building things that matter.</p>
+    </div>
+    <div class="articles-grid reveal" id="articlesGrid">
+      <!-- Cards injected by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE READER MODAL -->
+<div class="reader-overlay" id="readerOverlay" role="dialog" aria-modal="true" aria-labelledby="readerTitle">
+  <div class="reader-modal">
+    <button class="reader-close" id="readerClose" aria-label="Close article">✕</button>
+    <span class="art-tag reader-tag" id="readerTag"></span>
+    <h2 class="reader-title" id="readerTitle"></h2>
+    <p class="reader-byline" id="readerByline"></p>
+    <hr class="reader-divider">
+    <div class="reader-body" id="readerBody"></div>
+  </div>
+</div>
+
 <!-- EDUCATION -->
 <section id="education">
   <div class="container">
@@ -1137,6 +1253,188 @@
       root.setAttribute('data-theme', 'light');
       localStorage.setItem('theme', 'light');
     }
+  });
+
+  // ── ARTICLES ─────────────────────────────────────────────────────────────
+  const ARTICLES = [
+    {
+      id: 1,
+      tag: 'Architecture',
+      date: 'Mar 2025',
+      readTime: '6 min read',
+      title: 'Event-Driven Architecture with CQRS and Axon Framework',
+      excerpt: 'How we redesigned our Core Banking System using event sourcing and CQRS to achieve auditability, scalability, and eventual consistency without sacrificing developer experience.',
+      body: `
+        <h2>Why We Chose CQRS</h2>
+        <p>When building a Core Banking System, one constraint dominates every design decision: <strong>every state change must be traceable and reversible</strong>. Traditional CRUD architectures struggle here because they overwrite state — the history is gone the moment you run <code>UPDATE accounts SET balance = …</code>.</p>
+        <p>Event Sourcing flips this model. Instead of storing <em>current state</em>, you store a log of <em>what happened</em>. The balance you see today is the result of replaying all events from the beginning of time. This gives you a free audit trail, time-travel debugging, and the ability to project the same events into multiple read models.</p>
+        <h2>Axon Framework in Practice</h2>
+        <p>We adopted <strong>Axon Framework</strong> for Java 21 because it provides first-class support for:</p>
+        <ul>
+          <li>Aggregate lifecycle management and event sourcing out of the box</li>
+          <li>Command bus, event bus, and query bus as distinct concerns</li>
+          <li>Axon Server as an optimised event store and message broker</li>
+          <li>Sagas for long-running business processes (e.g. inter-bank transfers)</li>
+        </ul>
+        <h2>Command Side vs. Query Side</h2>
+        <p>Commands mutate state. Queries read state. In our system these live in separate Spring Boot modules backed by separate databases. The command side persists events to Axon Server; projection handlers consume those events asynchronously and populate a PostgreSQL read model optimised for the UI queries.</p>
+        <h3>A Sample Command Handler</h3>
+        <pre><code>@CommandHandler
+public void handle(DebitAccountCommand cmd) {
+    if (this.balance.compareTo(cmd.amount()) < 0)
+        throw new InsufficientFundsException(this.id);
+    apply(new AccountDebitedEvent(this.id, cmd.amount(), Instant.now()));
+}</code></pre>
+        <h2>Lessons Learned</h2>
+        <p>Event sourcing adds complexity upfront — schema-less events need careful versioning, and eventual consistency requires the UI to tolerate slight staleness. But for a domain where compliance demands full auditability, the trade-off is worth it. Start with a bounded context that <em>naturally</em> benefits from history (accounting, payments) before rolling this pattern out everywhere.</p>
+      `
+    },
+    {
+      id: 2,
+      tag: 'Backend',
+      date: 'Jan 2025',
+      readTime: '5 min read',
+      title: 'Designing Resilient Microservices with RabbitMQ and Dead-Letter Queues',
+      excerpt: 'Message queues make services resilient, but only if you plan for failure from day one. Here is a practical guide to DLQs, retry strategies, and poison-pill handling we use in production.',
+      body: `
+        <h2>The Happy Path Is a Lie</h2>
+        <p>Every integration tutorial shows you the happy path: producer sends a message, consumer processes it, done. Real systems are messier. Consumers crash mid-processing. Third-party APIs time out. Malformed payloads slip through. Without a strategy for failure, messages vanish silently and you wake up to angry users.</p>
+        <h2>Dead-Letter Queues to the Rescue</h2>
+        <p>RabbitMQ's <strong>Dead-Letter Exchange (DLX)</strong> lets you automatically route undeliverable or rejected messages to a designated queue. We configure every business queue with a DLX policy:</p>
+        <pre><code>@Bean
+Queue paymentQueue() {
+    return QueueBuilder.durable("payments.process")
+        .withArgument("x-dead-letter-exchange", "payments.dlx")
+        .withArgument("x-dead-letter-routing-key", "payments.dead")
+        .withArgument("x-message-ttl", 30_000)
+        .build();
+}</code></pre>
+        <h2>Retry Strategy</h2>
+        <p>Not all failures are permanent. We use Spring AMQP's retry interceptor with exponential back-off for transient errors (network blips, downstream timeouts), and route to DLQ only after N attempts:</p>
+        <ul>
+          <li>Attempt 1 → immediate</li>
+          <li>Attempt 2 → 2 s delay</li>
+          <li>Attempt 3 → 8 s delay</li>
+          <li>Attempt 4 → dead-letter</li>
+        </ul>
+        <h2>Handling Poison Pills</h2>
+        <p>A <em>poison pill</em> is a message that will <em>always</em> fail — a malformed payload your consumer cannot parse. Retrying it endlessly blocks the queue. Our DLQ consumer inspects the failure reason: if it's a deserialization error we park the message in a manual review table and alert on-call; if it's a transient error we re-queue after a cool-down window.</p>
+        <h2>Monitoring</h2>
+        <p>Set up RabbitMQ's management plugin alerts so DLQ depth triggers a PagerDuty notification. A non-zero DLQ is always a signal worth investigating — it should not be a place where messages go to die quietly.</p>
+      `
+    },
+    {
+      id: 3,
+      tag: 'Career',
+      date: 'Dec 2024',
+      readTime: '4 min read',
+      title: 'From Developer to Tech Lead: What Nobody Tells You',
+      excerpt: 'The transition from individual contributor to tech lead is less about code and more about trust, communication, and learning to measure your impact through the growth of others.',
+      body: `
+        <h2>The Invisible Shift</h2>
+        <p>One day you're the person solving the hardest technical problems. The next, your calendar is full of meetings, your pull requests are fewer, and you're answering the same questions repeatedly. This is not a failure — it is the job. But no one prepares you for it.</p>
+        <h2>Your Output is the Team's Output</h2>
+        <p>As a developer, your value is measured in features shipped and bugs fixed. As a tech lead, your value is measured in <strong>how well the team ships</strong>. That means:</p>
+        <ul>
+          <li>Unblocking team members is more important than writing code yourself</li>
+          <li>A junior developer who grows because of your mentorship is a multiplier on your impact</li>
+          <li>A well-written design document prevents three weeks of rework later</li>
+        </ul>
+        <h2>Code Review as Teaching, Not Gatekeeping</h2>
+        <p>The most valuable code reviews are not the ones that catch bugs — those matter, but a linter catches many of them. The most valuable reviews are the ones that explain <em>why</em> a different approach scales better, or point to a pattern that will prevent an entire class of future bugs. Leave comments that teach, not comments that shame.</p>
+        <h2>On Saying "I Don't Know"</h2>
+        <p>New tech leads often feel they must have all the answers. This is backwards. Saying <em>"I don't know, let's find out together"</em> builds more trust than confidently guessing and being wrong. Intellectual honesty is a leadership superpower.</p>
+        <h2>Technical Debt Conversations</h2>
+        <p>You will need to translate between business language and engineering language constantly. When the team needs time to refactor a brittle service, do not say "we need to pay down technical debt." Say "this component adds an hour of debugging to every new feature we build here — investing two sprints now saves us ten sprints over the next year." Numbers and outcomes, not jargon.</p>
+      `
+    },
+    {
+      id: 4,
+      tag: 'FinTech',
+      date: 'Oct 2024',
+      readTime: '7 min read',
+      title: 'Building Multi-Tenant Banking Systems: Isolation Without Complexity',
+      excerpt: 'Multi-tenancy in financial software raises the stakes — data leakage between clients is not just a bug, it is a regulatory failure. Here is the approach we took at the schema and application layers.',
+      body: `
+        <h2>What Multi-Tenancy Means for Banking</h2>
+        <p>A Core Banking System serving multiple client institutions must guarantee that Institution A's data is completely invisible to Institution B — even if they share the same database cluster. Regulatory frameworks like GDPR and local banking regulations make this not just a product requirement but a <strong>legal obligation</strong>.</p>
+        <h2>Three Common Isolation Models</h2>
+        <ul>
+          <li><strong>Separate databases per tenant</strong> — strongest isolation, highest operational overhead</li>
+          <li><strong>Separate schemas per tenant</strong> — good balance, manageable with automation</li>
+          <li><strong>Shared schema with tenant column</strong> — cheapest to run, highest risk if a query accidentally omits the tenant filter</li>
+        </ul>
+        <p>We chose <strong>separate schemas</strong> in PostgreSQL. Each tenant gets its own schema namespace; the application resolves the schema at login using a tenant identifier embedded in the JWT.</p>
+        <h2>Schema Resolution with Spring and Hibernate</h2>
+        <p>Spring's <code>AbstractRoutingDataSource</code> combined with a Hibernate <code>CurrentTenantIdentifierResolver</code> lets us switch schemas transparently at the query level:</p>
+        <pre><code>public class TenantContext {
+    private static final ThreadLocal&lt;String&gt; CURRENT = new ThreadLocal&lt;&gt;();
+    public static void set(String tenant) { CURRENT.set(tenant); }
+    public static String get() { return CURRENT.get(); }
+}</code></pre>
+        <h2>Migration Strategy</h2>
+        <p>Flyway's multi-tenant support lets us apply the same migration scripts across all schemas. We maintain a <em>master</em> schema as the canonical reference; provisioning a new tenant runs the full migration history against the new schema in under 30 seconds.</p>
+        <h2>Auditing Across Tenants</h2>
+        <p>A super-admin audit log lives in a dedicated <code>audit</code> schema outside any tenant boundary. Cross-tenant operations (e.g. regulatory reporting) read from this schema only — no application code ever queries across tenant schemas directly.</p>
+      `
+    }
+  ];
+
+  // Render article cards
+  const grid = document.getElementById('articlesGrid');
+  ARTICLES.forEach(a => {
+    const card = document.createElement('div');
+    card.className = 'art-card';
+    card.innerHTML = `
+      <div class="art-meta">
+        <span class="art-tag">${a.tag}</span>
+        <span class="art-date">${a.date}</span>
+      </div>
+      <div class="art-title">${a.title}</div>
+      <p class="art-excerpt">${a.excerpt}</p>
+      <div class="art-footer">
+        <span class="art-read-time">${a.readTime}</span>
+        <button class="art-btn" data-id="${a.id}">
+          Read
+          <svg fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    `;
+    grid.appendChild(card);
+  });
+
+  // Reader modal logic
+  const overlay = document.getElementById('readerOverlay');
+  const closeBtn = document.getElementById('readerClose');
+
+  function openArticle(id) {
+    const a = ARTICLES.find(x => x.id === id);
+    if (!a) return;
+    document.getElementById('readerTag').textContent = a.tag;
+    document.getElementById('readerTitle').textContent = a.title;
+    document.getElementById('readerByline').textContent = `${a.date} · ${a.readTime}`;
+    document.getElementById('readerBody').innerHTML = a.body;
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeReader() {
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  grid.addEventListener('click', e => {
+    const btn = e.target.closest('[data-id]');
+    if (btn) openArticle(+btn.dataset.id);
+  });
+  closeBtn.addEventListener('click', closeReader);
+  overlay.addEventListener('click', e => { if (e.target === overlay) closeReader(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeReader(); });
+
+  // Add reader elements to cursor hover targets
+  document.querySelectorAll('.art-card, .art-btn, .reader-close').forEach(el => {
+    el.addEventListener('mouseenter', () => ring.style.borderColor = 'rgba(220,38,38,0.9)');
+    el.addEventListener('mouseleave', () => ring.style.borderColor = 'rgba(220,38,38,0.5)');
   });
 </script>
 </body>
