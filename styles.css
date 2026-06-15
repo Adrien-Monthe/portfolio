@@ -307,7 +307,7 @@ section { padding: 7rem 2rem; }
 .section-desc { color: var(--text-2); font-size: 1rem; line-height: 1.75; max-width: 580px; margin-bottom: 3.5rem; text-align: justify; }
 
 /* ABOUT */
-.about-grid { display: grid; grid-template-columns: 1fr calc(1fr * var(--phi)); gap: calc(2rem * var(--phi)); align-items: start; }
+.about-grid { display: grid; grid-template-columns: 1fr 1.618fr; gap: calc(2rem * var(--phi)); align-items: start; }
 /* Golden-ratio rhythm + justified body copy */
 .about-grid > div:last-child p,
 .hero-desc, .section-desc, .proj-desc, .art-excerpt, .reader-body p {
