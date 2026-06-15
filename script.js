@@ -68,8 +68,8 @@ function setupCursor() {
     requestAnimationFrame(animRing);
   })();
   document.querySelectorAll('a, button, .pill, .proj-card, .stat-card').forEach(el => {
-    el.addEventListener('mouseenter', () => ring.style.borderColor = 'rgba(220,38,38,0.9)');
-    el.addEventListener('mouseleave', () => ring.style.borderColor = 'rgba(220,38,38,0.5)');
+    el.addEventListener('mouseenter', () => ring.style.borderColor = 'rgba(37,99,235,0.9)');
+    el.addEventListener('mouseleave', () => ring.style.borderColor = 'rgba(37,99,235,0.5)');
   });
 }
 
@@ -178,8 +178,8 @@ function renderArticles() {
   });
   // Re-attach cursor hover to new card elements
   grid.querySelectorAll('.art-card, .art-btn').forEach(el => {
-    el.addEventListener('mouseenter', () => ring.style.borderColor = 'rgba(220,38,38,0.9)');
-    el.addEventListener('mouseleave', () => ring.style.borderColor = 'rgba(220,38,38,0.5)');
+    el.addEventListener('mouseenter', () => ring.style.borderColor = 'rgba(37,99,235,0.9)');
+    el.addEventListener('mouseleave', () => ring.style.borderColor = 'rgba(37,99,235,0.5)');
   });
 }
 
@@ -210,8 +210,8 @@ function setupArticleReader() {
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeReader(); });
 
   document.querySelectorAll('.reader-close').forEach(el => {
-    el.addEventListener('mouseenter', () => ring.style.borderColor = 'rgba(220,38,38,0.9)');
-    el.addEventListener('mouseleave', () => ring.style.borderColor = 'rgba(220,38,38,0.5)');
+    el.addEventListener('mouseenter', () => ring.style.borderColor = 'rgba(37,99,235,0.9)');
+    el.addEventListener('mouseleave', () => ring.style.borderColor = 'rgba(37,99,235,0.5)');
   });
 }
 
