@@ -67,6 +67,7 @@
   </div>
   <div class="hero-content">
 
+    <div class="hero-eyebrow" data-i18n="hero.eyebrow">Software Engineer · FinTech Architecture</div>
     <h1 class="hero-name">
       <span class="grad">Adrien</span><br>
       <span class="grad">Monthe</span>
@@ -75,9 +76,8 @@
       <span data-i18n="hero.role_prefix">I build as a</span> <span class="typed" id="typedText"></span><span class="blink"></span>
     </div>
     <p class="hero-desc" data-i18n="hero.desc">
-      Results-driven Software Engineer with 5+ years of experience crafting
-      scalable web applications and leading cross-functional teams. Passionate about
-      FinTech, AI, and empowering the next generation of developers.
+      I design and lead event-driven banking systems — and the teams that ship them.
+      A FinTech-focused Software Engineer with 5+ years building scalable, auditable platforms.
     </p>
     <div class="hero-actions">
       <a href="#projects" class="btn-primary">
@@ -123,7 +123,7 @@
         </div>
         <div class="stats-row">
           <div class="stat-card"><div class="stat-num" data-target="5">0</div><div class="stat-lbl" data-i18n="about.stat.years">Years Experience</div></div>
-          <div class="stat-card"><div class="stat-num" data-target="10">0</div><div class="stat-lbl" data-i18n="about.stat.projects">Projects Delivered</div></div>
+          <div class="stat-card"><div class="stat-num" data-target="15">0</div><div class="stat-lbl" data-i18n="about.stat.projects">Projects Delivered</div></div>
           <div class="stat-card"><div class="stat-num" data-target="50">0</div><div class="stat-lbl" data-i18n="about.stat.students">Students Trained</div></div>
           <div class="stat-card"><div class="stat-num" data-target="3">0</div><div class="stat-lbl" data-i18n="about.stat.certs">Certifications</div></div>
         </div>
@@ -346,13 +346,89 @@
   </div>
 </section>
 
+<!-- FEATURED CASE STUDY -->
+<section id="case-study">
+  <div class="container">
+    <div class="reveal">
+      <div class="label" data-i18n="cs.label">// featured case study</div>
+      <h2 class="section-title" data-i18n="cs.title">Core Banking System</h2>
+      <div class="cs-badges">
+        <span class="cs-badge" data-i18n="cs.badge1">FinTech</span>
+        <span class="cs-badge" data-i18n="cs.badge2">Event-driven · CQRS</span>
+        <span class="cs-badge" data-i18n="cs.badge3">Tech Lead</span>
+      </div>
+    </div>
+    <div class="cs-grid reveal">
+      <div class="cs-text">
+        <h3 class="cs-h" data-i18n="cs.challengeHead">The challenge</h3>
+        <p class="cs-p" data-i18n="cs.challenge">A core banking platform that processes high-volume transactions in real time, stays fully auditable, and scales to multiple tenants — without the tight coupling that makes monoliths brittle to change.</p>
+        <h3 class="cs-h" data-i18n="cs.outcomeHead">My role &amp; outcome</h3>
+        <p class="cs-p" data-i18n="cs.outcome">As Tech Lead, I architected an event-driven system using CQRS and event sourcing on Axon Server, with RabbitMQ for asynchronous messaging across Java 21 / Spring Boot 3 and NestJS services. I led a cross-functional team through code reviews, technical standards, and Agile delivery — shipping a maintainable platform with real-time read-model projections and a clean audit trail.</p>
+        <div class="cs-tags">
+          <span class="tbadge">Java 21</span><span class="tbadge">Spring Boot 3</span>
+          <span class="tbadge">Axon Server</span><span class="tbadge">RabbitMQ</span>
+          <span class="tbadge">NestJS</span><span class="tbadge">CQRS</span>
+        </div>
+      </div>
+      <figure class="cs-diagram">
+        <svg viewBox="0 0 360 352" role="img" aria-label="Event-driven CQRS architecture: clients send commands to the command API, which emits events to the Axon event store and bus, RabbitMQ feeds read-model projections, and a query API serves clients.">
+          <defs>
+            <marker id="csArrow" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto">
+              <path d="M0,0 L6,3 L0,6 Z" fill="var(--accent)"></path>
+            </marker>
+          </defs>
+          <g class="cs-node">
+            <rect x="80" y="8" width="200" height="46" rx="12"></rect>
+            <text class="cs-t" x="180" y="36">Clients / UI</text>
+          </g>
+          <g class="cs-node">
+            <rect x="80" y="78" width="200" height="46" rx="12"></rect>
+            <text class="cs-t" x="180" y="98">Command API</text>
+            <text class="cs-s" x="180" y="113">Java 21 · Spring Boot 3</text>
+          </g>
+          <g class="cs-node">
+            <rect x="80" y="148" width="200" height="46" rx="12"></rect>
+            <text class="cs-t" x="180" y="168">Event Store + Bus</text>
+            <text class="cs-s" x="180" y="183">Axon Server</text>
+          </g>
+          <g class="cs-node">
+            <rect x="80" y="218" width="200" height="46" rx="12"></rect>
+            <text class="cs-t" x="180" y="238">Projections</text>
+            <text class="cs-s" x="180" y="253">Read Models</text>
+          </g>
+          <g class="cs-node">
+            <rect x="80" y="288" width="200" height="46" rx="12"></rect>
+            <text class="cs-t" x="180" y="308">Query API</text>
+            <text class="cs-s" x="180" y="323">REST · NestJS</text>
+          </g>
+          <g stroke="var(--accent)" stroke-width="1.6" marker-end="url(#csArrow)">
+            <line x1="180" y1="54" x2="180" y2="76"></line>
+            <line x1="180" y1="124" x2="180" y2="146"></line>
+            <line x1="180" y1="194" x2="180" y2="216"></line>
+            <line x1="180" y1="264" x2="180" y2="286"></line>
+            <path d="M80,311 C28,311 28,31 78,31" fill="none"></path>
+          </g>
+          <g class="cs-edge">
+            <text x="190" y="69">command</text>
+            <text x="190" y="139">events</text>
+            <text x="190" y="209">RabbitMQ</text>
+            <text x="190" y="279">read model</text>
+            <text x="40" y="174" transform="rotate(-90 40 174)">query</text>
+          </g>
+        </svg>
+        <figcaption class="cs-cap" data-i18n="cs.diagramCap">Event-driven CQRS — commands, event bus, and read-model projections.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
 <!-- PROJECTS -->
 <section id="projects">
   <div class="container">
     <div class="reveal">
-      <div class="label" data-i18n="proj.label">// featured projects</div>
-      <h2 class="section-title" data-i18n="proj.title">Things I've Built</h2>
-      <p class="section-desc" data-i18n="proj.desc">A selection of projects spanning FinTech, healthcare, education, and enterprise systems. Project images coming soon.</p>
+      <div class="label" data-i18n="proj.label">// more selected work</div>
+      <h2 class="section-title" data-i18n="proj.title">More Selected Work</h2>
+      <p class="section-desc" data-i18n="proj.desc">Beyond the core banking platform — selected projects across FinTech, healthcare, AI, and education.</p>
     </div>
     <div class="projects-grid reveal">
 
