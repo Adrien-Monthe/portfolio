@@ -65,6 +65,12 @@
   "exp.role6.b1": "Researched feasibility of implementing AI systems for banking operations",
   "exp.role6.b2": "Delivered a comprehensive AI implementation report used as reference for future technology adoption",
   "exp.role6.b3": "Assisted in troubleshooting and optimizing internal applications",
+  "exp.afb.period": "2025 – Present",
+  "exp.afb.role": "Software Engineer (detached to PKFokam Research Center) · Program Manager — SARA",
+  "exp.afb.b1": "Program Manager for SARA by Afriland First Bank — the bank's internet banking and payment hub",
+  "exp.afb.b2": "Led SARA's rollout across three countries, with internet banking live in one",
+  "exp.afb.b3": "Detached to PKFokam Research Center, engineering the group's core banking and digital platforms",
+  "exp.afb.b4": "Coordinated cross-functional delivery — product, engineering, QA, and operations — across country deployments",
 
   "proj.label": "// featured projects",
   "proj.title": "Things I've Built",
@@ -88,6 +94,9 @@
   "proj.p6.cat": "Social Impact · EdTech",
   "proj.p6.title": "STEM Workshop Platform",
   "proj.p6.desc": "Digital platform for Girl Up STEM workshops with coding exercises, project submissions, and mentorship matching for young women.",
+  "proj.p7.cat": "FinTech · Internet Banking",
+  "proj.p7.title": "SARA by Afriland First Bank",
+  "proj.p7.desc": "Internet banking and payment hub for Afriland First Bank — account access, transfers, bill and tax payments, and a mobile wallet. Deployed across three countries, with internet banking live in one.",
 
   "articles.label": "// thoughts & writings",
   "articles.title": "Articles",

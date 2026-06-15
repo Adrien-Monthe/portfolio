@@ -65,6 +65,12 @@
   "exp.role6.b1": "Étudié la faisabilité de la mise en œuvre de systèmes IA pour les opérations bancaires",
   "exp.role6.b2": "Livré un rapport complet sur la mise en œuvre de l'IA utilisé comme référence pour l'adoption future des technologies",
   "exp.role6.b3": "Assisté dans le dépannage et l'optimisation des applications internes",
+  "exp.afb.period": "2025 – Présent",
+  "exp.afb.role": "Ingénieur Logiciel (détaché au PKFokam Research Center) · Chef de Programme — SARA",
+  "exp.afb.b1": "Chef de programme de SARA by Afriland First Bank — la plateforme de banque en ligne et hub de paiement de la banque",
+  "exp.afb.b2": "Piloté le déploiement de SARA dans trois pays, avec la banque en ligne active dans un pays",
+  "exp.afb.b3": "Détaché au PKFokam Research Center, en charge de l'ingénierie du core banking et des plateformes numériques du groupe",
+  "exp.afb.b4": "Coordonné la livraison interfonctionnelle — produit, ingénierie, QA et exploitation — sur les déploiements pays",
 
   "proj.label": "// projets phares",
   "proj.title": "Ce que j'ai construit",
@@ -88,6 +94,9 @@
   "proj.p6.cat": "Impact Social · EdTech",
   "proj.p6.title": "Plateforme d'Ateliers STEM",
   "proj.p6.desc": "Plateforme numérique pour les ateliers STEM de Girl Up avec exercices de codage, soumissions de projets et mise en relation avec des mentors pour les jeunes femmes.",
+  "proj.p7.cat": "FinTech · Banque en ligne",
+  "proj.p7.title": "SARA by Afriland First Bank",
+  "proj.p7.desc": "Plateforme de banque en ligne et hub de paiement d'Afriland First Bank — accès aux comptes, virements, paiement de factures et d'impôts, et portefeuille mobile. Déployée dans trois pays, avec la banque en ligne active dans un pays.",
 
   "articles.label": "// réflexions & écrits",
   "articles.title": "Articles",
