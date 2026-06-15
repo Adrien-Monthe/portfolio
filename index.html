@@ -374,41 +374,40 @@
         <svg viewBox="0 0 360 352" role="img" aria-label="Event-driven CQRS architecture: clients send commands to the command API, which emits events to the Axon event store and bus, RabbitMQ feeds read-model projections, and a query API serves clients.">
           <defs>
             <marker id="csArrow" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto">
-              <path d="M0,0 L6,3 L0,6 Z" fill="var(--accent)"></path>
+              <path d="M0,0 L6,3 L0,6 Z" style="fill:var(--accent)"></path>
             </marker>
           </defs>
-          <g class="cs-node">
-            <rect x="80" y="8" width="200" height="46" rx="12"></rect>
-            <text class="cs-t" x="180" y="36">Clients / UI</text>
+          <g>
+            <rect x="80" y="8" width="200" height="46" rx="12" style="fill:var(--bg);stroke:var(--border-accent);stroke-width:1"></rect>
+            <text x="180" y="36" style="fill:var(--text);font-family:var(--sans);font-size:13px;font-weight:600;text-anchor:middle">Clients / UI</text>
           </g>
-          <g class="cs-node">
-            <rect x="80" y="78" width="200" height="46" rx="12"></rect>
-            <text class="cs-t" x="180" y="98">Command API</text>
-            <text class="cs-s" x="180" y="113">Java 21 · Spring Boot 3</text>
+          <g>
+            <rect x="80" y="78" width="200" height="46" rx="12" style="fill:var(--bg);stroke:var(--border-accent);stroke-width:1"></rect>
+            <text x="180" y="104" style="fill:var(--text);font-family:var(--sans);font-size:13px;font-weight:600;text-anchor:middle">Command API · Java 21</text>
           </g>
-          <g class="cs-node">
-            <rect x="80" y="148" width="200" height="46" rx="12"></rect>
-            <text class="cs-t" x="180" y="168">Event Store + Bus</text>
-            <text class="cs-s" x="180" y="183">Axon Server</text>
+          <g>
+            <rect x="80" y="148" width="200" height="46" rx="12" style="fill:var(--bg);stroke:var(--border-accent);stroke-width:1"></rect>
+            <text x="180" y="168" style="fill:var(--text);font-family:var(--sans);font-size:13px;font-weight:600;text-anchor:middle">Event Store + Bus</text>
+            <text x="180" y="183" style="fill:var(--text-2);font-family:var(--mono);font-size:10px;text-anchor:middle">Axon Server</text>
           </g>
-          <g class="cs-node">
-            <rect x="80" y="218" width="200" height="46" rx="12"></rect>
-            <text class="cs-t" x="180" y="238">Projections</text>
-            <text class="cs-s" x="180" y="253">Read Models</text>
+          <g>
+            <rect x="80" y="218" width="200" height="46" rx="12" style="fill:var(--bg);stroke:var(--border-accent);stroke-width:1"></rect>
+            <text x="180" y="238" style="fill:var(--text);font-family:var(--sans);font-size:13px;font-weight:600;text-anchor:middle">Projections</text>
+            <text x="180" y="253" style="fill:var(--text-2);font-family:var(--mono);font-size:10px;text-anchor:middle">Read Models</text>
           </g>
-          <g class="cs-node">
-            <rect x="80" y="288" width="200" height="46" rx="12"></rect>
-            <text class="cs-t" x="180" y="308">Query API</text>
-            <text class="cs-s" x="180" y="323">REST · NestJS</text>
+          <g>
+            <rect x="80" y="288" width="200" height="46" rx="12" style="fill:var(--bg);stroke:var(--border-accent);stroke-width:1"></rect>
+            <text x="180" y="308" style="fill:var(--text);font-family:var(--sans);font-size:13px;font-weight:600;text-anchor:middle">Query API</text>
+            <text x="180" y="323" style="fill:var(--text-2);font-family:var(--mono);font-size:10px;text-anchor:middle">REST · NestJS</text>
           </g>
-          <g stroke="var(--accent)" stroke-width="1.6" marker-end="url(#csArrow)">
+          <g style="stroke:var(--accent);stroke-width:1.6" marker-end="url(#csArrow)">
             <line x1="180" y1="54" x2="180" y2="76"></line>
             <line x1="180" y1="124" x2="180" y2="146"></line>
             <line x1="180" y1="194" x2="180" y2="216"></line>
             <line x1="180" y1="264" x2="180" y2="286"></line>
-            <path d="M80,311 C28,311 28,31 78,31" fill="none"></path>
+            <path d="M80,311 C28,311 28,31 78,31" style="fill:none"></path>
           </g>
-          <g class="cs-edge">
+          <g style="fill:var(--text-3);font-family:var(--mono);font-size:10px">
             <text x="190" y="69">command</text>
             <text x="190" y="139">events</text>
             <text x="190" y="209">RabbitMQ</text>
@@ -652,21 +651,4 @@
         GitHub
       </a>
       <a href="https://linkedin.com/in/adrien-monthe" target="_blank" class="clink">
-        <svg width="17" height="17" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-        LinkedIn
-      </a>
-      <a href="tel:+237699787494" class="clink">
-        <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.22 2.18 2 2 0 012.18 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006 6l1.27-.55a2 2 0 012.11.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
-        +237 699 787 494
-      </a>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <p><span data-i18n="footer.built">Designed &amp; Built by</span> <span>Adrien Monthe</span> &nbsp;·&nbsp; <span>2025</span></p>
-</footer>
-
-<script src="script.js"></script>
-</body>
-</html>
+        <svg width="17" height="17" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v1
