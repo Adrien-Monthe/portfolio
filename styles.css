@@ -23,6 +23,7 @@
   --orb-3: rgba(56,189,248,0.09);
   --mono: 'JetBrains Mono', monospace;
   --sans: 'Inter', sans-serif;
+  --phi: 1.618;            /* golden ratio — drives proportions & rhythm */
 }
 
 [data-theme="light"] {
@@ -281,7 +282,17 @@ section { padding: 7rem 2rem; }
 .section-desc { color: var(--text-2); font-size: 1rem; line-height: 1.75; max-width: 580px; margin-bottom: 3.5rem; text-align: justify; }
 
 /* ABOUT */
-.about-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 5rem; align-items: start; }
+.about-grid { display: grid; grid-template-columns: 1fr calc(1fr * var(--phi)); gap: calc(2rem * var(--phi)); align-items: start; }
+/* Golden-ratio rhythm + justified body copy */
+.about-grid > div:last-child p,
+.hero-desc, .section-desc, .proj-desc, .art-excerpt, .reader-body p {
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  line-height: var(--phi);
+}
+.about-grid > div:last-child p { margin-bottom: 1.2rem; }
 .avatar-wrap { display: flex; flex-direction: column; align-items: center; gap: 2rem; }
 .avatar-box {
   width: 260px; height: 260px; border-radius: 28px;
@@ -420,10 +431,15 @@ section { padding: 7rem 2rem; }
 .c4 .proj-ph { background: linear-gradient(135deg, #0c1445, #1e3a8a, #0284c7); }
 .c5 .proj-ph { background: linear-gradient(135deg, #0a1530, #155e75, #0891b2); }
 .c6 .proj-ph { background: linear-gradient(135deg, #0f172a, #1e40af, #60a5fa); }
+.c7 .proj-ph { background: linear-gradient(135deg, #0c1445, #1e3a8a, #2563eb); }
+.proj-photo {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; object-position: center; display: block; z-index: 1;
+}
 .proj-overlay {
   position: absolute; inset: 0; background: rgba(4,9,20,0.88);
   display: flex; align-items: center; justify-content: center;
-  opacity: 0; transition: opacity 0.3s;
+  opacity: 0; transition: opacity 0.3s; z-index: 2;
 }
 .proj-card:hover .proj-overlay { opacity: 1; }
 .ov-btn {
