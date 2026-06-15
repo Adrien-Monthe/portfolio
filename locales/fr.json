@@ -9,7 +9,7 @@
 
   "hero.role_prefix": "Je construis en tant que",
   "hero.roles": ["Ingénieur Logiciel", "Tech Lead", "Scrum Master", "Enseignant", "Consultant IT"],
-  "hero.desc": "Ingénieur logiciel orienté résultats avec près de 5 ans d'expérience dans la conception d'applications web évolutives et la direction d'équipes pluridisciplinaires. Passionné par la FinTech, l'IA et l'accompagnement de la prochaine génération de développeurs.",
+  "hero.desc": "Ingénieur logiciel orienté résultats avec plus de 5 ans d'expérience dans la conception d'applications web évolutives et la direction d'équipes pluridisciplinaires. Passionné par la FinTech, l'IA et l'accompagnement de la prochaine génération de développeurs.",
   "hero.viewProjects": "Voir les projets",
   "hero.downloadCV": "Télécharger le CV",
   "hero.getInTouch": "Me contacter",
@@ -17,8 +17,8 @@
 
   "about.label": "// à propos",
   "about.title": "Concevoir des logiciels qui <span style=\"color:var(--accent)\">ont un impact</span>",
-  "about.p1": "Je suis un ingénieur logiciel basé au Cameroun avec près de 5 ans d'expérience dans la création d'applications web et multiplateformes de haute qualité. Je m'épanouis à l'intersection de l'excellence technique et de la valeur métier réelle.",
-  "about.p2": "Au PKFokam Research Center, je dirige des équipes pluridisciplinaires qui construisent un système bancaire principal sur une architecture événementielle — Java 21, Spring Boot 3, NestJS, RabbitMQ et Axon Server. J'assure également le rôle de Scrum Master, en alignant la livraison sur les objectifs métier.",
+  "about.p1": "Je suis un ingénieur logiciel basé au Cameroun avec un peu plus de 5 ans d'expérience dans la création d'applications web et multiplateformes de haute qualité. Je m'épanouis là où l'excellence technique rencontre la valeur métier réelle.",
+  "about.p2": "Ingénieur logiciel chez Afriland First Bank, détaché au PKFokam Research Center, je dirige des équipes pluridisciplinaires qui construisent un système bancaire principal sur une architecture événementielle — Java 21, Spring Boot 3, NestJS, RabbitMQ et Axon Server. J'assure aussi le rôle de Chef de Programme de SARA, la plateforme de banque en ligne et hub de paiement de la banque, désormais déployée dans trois pays — en alignant la livraison sur les objectifs métier comme Scrum Master.",
   "about.p3": "Au-delà de l'ingénierie, j'enseigne au PKFokam Institute et j'ai formé plus de 50 jeunes femmes en STEM grâce au programme Girl Up — parce que la grande technologie a besoin de grandes personnes derrière elle.",
   "about.stat.years": "Ans d'expérience",
   "about.stat.projects": "Projets livrés",
@@ -35,7 +35,7 @@
 
   "exp.label": "// expérience professionnelle",
   "exp.title": "Parcours professionnel",
-  "exp.desc": "Près de 5 ans de construction, de direction et de livraison de solutions logicielles percutantes dans tous les secteurs.",
+  "exp.desc": "Plus de 5 ans de construction, de direction et de livraison de solutions logicielles percutantes dans tous les secteurs.",
   "exp.role1": "Développeur Backend · Tech Lead · Analyste Métier",
   "exp.role1.b1": "Construit et maintenu le backend CBS avec Java 17 & 21, Spring Boot 3, NestJS, RabbitMQ, Axon Server et WebSockets",
   "exp.role1.b2": "Dirigé une équipe pluridisciplinaire (Backend, Frontend, QA, BA) — gérant les révisions de code, la délégation des tâches et les standards techniques",
@@ -65,7 +65,7 @@
   "exp.role6.b1": "Étudié la faisabilité de la mise en œuvre de systèmes IA pour les opérations bancaires",
   "exp.role6.b2": "Livré un rapport complet sur la mise en œuvre de l'IA utilisé comme référence pour l'adoption future des technologies",
   "exp.role6.b3": "Assisté dans le dépannage et l'optimisation des applications internes",
-  "exp.afb.period": "2025 – Présent",
+  "exp.afb.period": "Avr 2025 – Présent",
   "exp.afb.role": "Ingénieur Logiciel (détaché au PKFokam Research Center) · Chef de Programme — SARA",
   "exp.afb.b1": "Chef de programme de SARA by Afriland First Bank — la plateforme de banque en ligne et hub de paiement de la banque",
   "exp.afb.b2": "Piloté le déploiement de SARA dans trois pays, avec la banque en ligne active dans un pays",
