@@ -457,6 +457,7 @@ section { padding: 7rem 2rem; }
 .c5 .proj-ph { background: linear-gradient(135deg, #0a1530, #155e75, #0891b2); }
 .c6 .proj-ph { background: linear-gradient(135deg, #0f172a, #1e40af, #60a5fa); }
 .c7 .proj-ph { background: linear-gradient(135deg, #0c1445, #1e3a8a, #2563eb); }
+.c8 .proj-ph { background: linear-gradient(135deg, #0a2540, #0e4a6e, #2563eb); }
 .proj-photo {
   position: absolute; inset: 0; width: 100%; height: 100%;
   object-fit: cover; object-position: center; display: block; z-index: 1;
