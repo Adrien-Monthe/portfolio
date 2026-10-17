@@ -48,6 +48,7 @@ function init() {
   setupCursor();
   startTyping();
   setupScrollReveal();
+  setupNavSpy();
   setupProjectSpotlight();
   setupMobileNav();
   setupThemeToggle();
@@ -59,7 +60,10 @@ function init() {
 
 /* ── Custom cursor ───────────────────────────────────────────────────────── */
 function setupCursor() {
+  const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  if (!finePointer || reduceMotion) { cursor.remove(); ring.remove(); return; }
   document.addEventListener('mousemove', e => {
+    document.documentElement.classList.add('has-cursor');
     mx = e.clientX; my = e.clientY;
     cursor.style.transform = `translate(${mx - 4}px, ${my - 4}px)`;
   });
@@ -120,6 +124,18 @@ function setupScrollReveal() {
     });
   }, { threshold: 0.5 });
   document.querySelectorAll('.stat-num[data-target]').forEach(el => cObs.observe(el));
+}
+
+/* ── Nav: mark the section being read ────────────────────────────────────── */
+function setupNavSpy() {
+  const links = [...document.querySelectorAll('.nav-links a[href^="#"]')];
+  const spy = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      links.forEach(a => a.toggleAttribute('aria-current', a.getAttribute('href') === '#' + e.target.id));
+    });
+  }, { rootMargin: '-45% 0px -50% 0px' });
+  document.querySelectorAll('section[id]').forEach(el => spy.observe(el));
 }
 
 /* ── Project spotlight ───────────────────────────────────────────────────── */
