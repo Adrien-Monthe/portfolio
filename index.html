@@ -241,7 +241,7 @@
             <li data-i18n="exp.afb.b3">Detached to PKFokam Research Center, engineering the group's core banking and digital platforms</li>
             <li data-i18n="exp.afb.b4">Coordinated cross-functional delivery — product, engineering, QA, and operations — across country deployments</li>
             <li data-i18n="exp.afb.b5">Cut release-pipeline time from 15 to 8 minutes on the pilot with a deploy-only CI template, now rolled out to 18 Java services</li>
-            <li data-i18n="exp.afb.b6">Built the adapter to the Conecta instant-payment switch — hexagonal architecture, idempotent transfers, audited movements</li>
+            <li data-i18n="exp.afb.b6">Integrated SARA with the BCEAO PI-SPI instant-payment platform through the Conecta partner — hexagonal adapter, idempotent transfers, audited movements</li>
           </ul>
           <div class="t-tech">
             <span class="tbadge">Internet Banking</span><span class="tbadge">Payment Hub</span>
@@ -458,12 +458,12 @@
 
       <div class="reveal" style="--d:0ms">
         <article class="pr-card">
-          <div class="proj-cat" data-i18n="pr.c1.cat">Integration · Instant Payments</div>
-          <h3 class="proj-title" data-i18n="pr.c1.title">Conecta payment-switch adapter</h3>
-          <p class="proj-desc" data-i18n="pr.c1.desc">An anti-corruption layer between SARA and the Conecta regional instant-payment switch — alias management, funds transfers (request, confirm, status) and inbound callbacks. Hexagonal by design, with idempotent writes, an audit trail of every movement, and fail-closed callback authentication.</p>
+          <div class="proj-cat" data-i18n="pr.c1.cat">Integration · BCEAO PI-SPI</div>
+          <h3 class="proj-title" data-i18n="pr.c1.title">PI-SPI instant-payment integration</h3>
+          <p class="proj-desc" data-i18n="pr.c1.desc">SARA's connection to PI-SPI, the BCEAO instant-payment interoperability platform, through the Conecta partner. An anti-corruption adapter covering alias management, funds transfers (request, confirm, status), BCEAO QR codes and inbound callbacks — hexagonal by design, with idempotent writes, an audit trail of every movement, and fail-closed callback authentication.</p>
           <div class="proj-tags">
-            <span class="ptag">Spring Boot 4</span><span class="ptag">Java 21</span>
-            <span class="ptag">PostgreSQL</span><span class="ptag">Liquibase</span>
+            <span class="ptag">PI-SPI</span><span class="ptag">Conecta</span>
+            <span class="ptag">Spring Boot 4</span><span class="ptag">PostgreSQL</span>
             <span class="ptag">Hexagonal / DDD</span>
           </div>
         </article>
