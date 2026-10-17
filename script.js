@@ -10,6 +10,8 @@ let ri = 0, ci = 0, del = false;
 // Cursor tracking
 let mx = 0, my = 0, rx = 0, ry = 0;
 
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 /* ── DOM refs ────────────────────────────────────────────────────────────── */
 const cursor    = document.getElementById('cursor');
 const ring      = document.getElementById('cursorRing');
@@ -75,6 +77,7 @@ function setupCursor() {
 
 /* ── Typing animation ────────────────────────────────────────────────────── */
 function startTyping() {
+  if (reduceMotion) { typedEl.textContent = roles[0]; return; }
   function type() {
     const w = roles[ri];
     typedEl.textContent = del ? w.slice(0, --ci) : w.slice(0, ++ci);
@@ -106,6 +109,7 @@ function setupScrollReveal() {
     entries.forEach(e => {
       if (!e.isIntersecting) return;
       const el = e.target, target = +el.dataset.target;
+      if (reduceMotion) { el.textContent = target + '+'; cObs.unobserve(el); return; }
       let n = 0; const step = target / 36;
       const t = setInterval(() => {
         n = Math.min(n + step, target);
@@ -245,6 +249,7 @@ function setLang(lang) {
   const newRoles = t['hero.roles'] || I18N.en['hero.roles'];
   roles.splice(0, roles.length, ...newRoles);
   ri = 0; ci = 0; del = false;
+  if (reduceMotion) typedEl.textContent = roles[0];
 
   // Re-render article cards with updated "Read" label
   renderArticles();

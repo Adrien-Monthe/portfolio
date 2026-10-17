@@ -181,6 +181,8 @@
           <span class="pill">NestJS</span><span class="pill">Python</span>
           <span class="pill">Django</span><span class="pill">RabbitMQ</span>
           <span class="pill">Axon Server</span><span class="pill">WebSockets</span>
+          <span class="pill">Node.js</span><span class="pill">MySQL</span>
+          <span class="pill">PostgreSQL</span><span class="pill">Liquibase</span>
         </div>
       </div>
       <div class="skill-cat">
@@ -197,7 +199,9 @@
           <span class="pill">Git</span><span class="pill">Bitbucket Pipelines</span>
           <span class="pill">Docker</span><span class="pill">Cypress</span>
           <span class="pill">Jira</span><span class="pill">Confluence</span>
-          <span class="pill">Draw.io</span>
+          <span class="pill">Draw.io</span><span class="pill">GitLab CI</span>
+          <span class="pill">Azure Pipelines</span><span class="pill">JUnit 5</span>
+          <span class="pill">Testcontainers</span>
         </div>
       </div>
       <div class="skill-cat">
@@ -236,10 +240,13 @@
             <li data-i18n="exp.afb.b2">Led SARA's rollout across three countries, with internet banking live in one</li>
             <li data-i18n="exp.afb.b3">Detached to PKFokam Research Center, engineering the group's core banking and digital platforms</li>
             <li data-i18n="exp.afb.b4">Coordinated cross-functional delivery — product, engineering, QA, and operations — across country deployments</li>
+            <li data-i18n="exp.afb.b5">Cut release-pipeline time from 15 to 8 minutes on the pilot with a deploy-only CI template, now rolled out to 18 Java services</li>
+            <li data-i18n="exp.afb.b6">Built the adapter to the Conecta instant-payment switch — hexagonal architecture, idempotent transfers, audited movements</li>
           </ul>
           <div class="t-tech">
             <span class="tbadge">Internet Banking</span><span class="tbadge">Payment Hub</span>
             <span class="tbadge">Program Management</span><span class="tbadge">FinTech</span>
+            <span class="tbadge">GitLab CI</span><span class="tbadge">Spring Boot 4</span>
           </div>
         </div>
       </div>
@@ -435,6 +442,69 @@
         </svg>
         <figcaption class="cs-cap" data-i18n="cs.diagramCap">Event-driven CQRS — commands, event bus, and read-model projections.</figcaption>
       </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ENGINEERING IN PRACTICE -->
+<section id="practice">
+  <div class="container">
+    <div class="reveal">
+      <div class="label" data-i18n="pr.label">// engineering in practice</div>
+      <h2 class="section-title" data-i18n="pr.title">How I Ship</h2>
+      <p class="section-desc" data-i18n="pr.desc">Beyond the architecture — the integrations, pipelines, and test discipline that keep banking software releasable.</p>
+    </div>
+    <div class="practice-grid">
+
+      <div class="reveal" style="--d:0ms">
+        <article class="pr-card">
+          <div class="proj-cat" data-i18n="pr.c1.cat">Integration · Instant Payments</div>
+          <h3 class="proj-title" data-i18n="pr.c1.title">Conecta payment-switch adapter</h3>
+          <p class="proj-desc" data-i18n="pr.c1.desc">An anti-corruption layer between SARA and the Conecta regional instant-payment switch — alias management, funds transfers (request, confirm, status) and inbound callbacks. Hexagonal by design, with idempotent writes, an audit trail of every movement, and fail-closed callback authentication.</p>
+          <div class="proj-tags">
+            <span class="ptag">Spring Boot 4</span><span class="ptag">Java 21</span>
+            <span class="ptag">PostgreSQL</span><span class="ptag">Liquibase</span>
+            <span class="ptag">Hexagonal / DDD</span>
+          </div>
+        </article>
+      </div>
+
+      <div class="reveal" style="--d:80ms">
+        <article class="pr-card">
+          <div class="proj-cat" data-i18n="pr.c2.cat">DevOps · CI/CD</div>
+          <h3 class="proj-title" data-i18n="pr.c2.title">Pipeline v2 — deploy-only releases</h3>
+          <div class="bars" role="img" aria-label="Release push duration on the pilot: 15 minutes before, 8 minutes after">
+            <div class="bar-row">
+              <span class="bar-lbl" data-i18n="pr.c2.before">Before</span>
+              <div class="bar-track"><div class="bar-fill" style="--w:100%;--bd:200ms"></div></div>
+              <span class="bar-val">15 min</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-lbl" data-i18n="pr.c2.after">After</span>
+              <div class="bar-track"><div class="bar-fill after" style="--w:53.3%;--bd:280ms"></div></div>
+              <span class="bar-val">8 min</span>
+            </div>
+          </div>
+          <p class="proj-desc" data-i18n="pr.c2.desc">Deploy pipelines were taking 17–33 minutes for a one-to-two-minute deploy. Pipeline v2 builds once with a single mvn verify, reuses that build for a deploy-only mode, and keeps a per-project dependency cache. On the pilot, a release push dropped from 15 to 8 minutes; the template now runs on 18 Java services.</p>
+          <div class="proj-tags">
+            <span class="ptag">GitLab CI</span><span class="ptag">Maven</span>
+            <span class="ptag">Docker</span><span class="ptag">Trivy</span>
+          </div>
+        </article>
+      </div>
+
+      <div class="reveal" style="--d:160ms">
+        <article class="pr-card">
+          <div class="proj-cat" data-i18n="pr.c3.cat">Quality · Testing</div>
+          <h3 class="proj-title" data-i18n="pr.c3.title">Tests that tell the truth</h3>
+          <p class="proj-desc" data-i18n="pr.c3.desc">Domain logic under plain JUnit, persistence under Testcontainers against a real database instead of mocks, end-to-end flows under Cypress. When a release pipeline went green over failing tests, I traced it to a test-runner setting that swallowed failures — a green build has to mean green.</p>
+          <div class="proj-tags">
+            <span class="ptag">JUnit 5</span><span class="ptag">Mockito</span>
+            <span class="ptag">Testcontainers</span><span class="ptag">Cypress</span>
+          </div>
+        </article>
+      </div>
+
     </div>
   </div>
 </section>
